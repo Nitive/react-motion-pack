@@ -9,6 +9,7 @@ env:
   mocha: true
 
 rules:
+  indent: [2, 'tab']
   semi: [2, 'never']
   jsx-quotes: [2, 'prefer-single']
   id-length: 0

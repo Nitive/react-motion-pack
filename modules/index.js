@@ -1,1 +1,2 @@
-export PopUp from './PopUp';
+export PopUp from './PopUp'
+

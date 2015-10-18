@@ -1,0 +1,21 @@
+parser: "babel-eslint"
+
+extends: 'airbnb'
+
+env:
+  browser: true
+  node: true
+  es6: true
+  mocha: true
+
+rules:
+  semi: [2, 'never']
+  jsx-quotes: [2, 'prefer-single']
+  id-length: 0
+
+ecmaFeatures:
+  jsx: true
+  module: true
+
+plugins:
+  - react

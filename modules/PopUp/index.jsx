@@ -1,7 +1,6 @@
-import React, {PropTypes} from 'react';
-import {Motion, spring} from 'react-motion';
-import cx from 'classnames';
-import {wrapper, styles} from './styles';
+import React, {PropTypes} from 'react'
+import {Motion, spring} from 'react-motion'
+import {wrapper, styles} from './styles'
 
 
 export default class PopUp extends React.Component {
@@ -30,7 +29,7 @@ export default class PopUp extends React.Component {
           {this.props.children}
         </div>
       </div>
-    );
+    )
 
     return (
       <Motion
@@ -39,6 +38,6 @@ export default class PopUp extends React.Component {
       >
         {interpolated => getContent(interpolated)}
       </Motion>
-    );
+    )
   }
 }

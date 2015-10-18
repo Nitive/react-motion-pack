@@ -1,0 +1,30 @@
+{
+  "name": "react-motion-pack",
+  "version": "0.0.0",
+  "description": "Library of react components with beautiful animation",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel ./modules -d lib --ignore '**/test.jsx'",
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitive/react-motion-pack.git"
+  },
+  "keywords": [
+    "react",
+    "react-motion",
+    "animation"
+  ],
+  "author": "Maxim Samoilov <nitive@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nitive/react-motion-pack/issues"
+  },
+  "homepage": "https://github.com/Nitive/react-motion-pack#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "react": "^0.14.0",
+    "react-motion": "^0.3.1"
+  }
+}

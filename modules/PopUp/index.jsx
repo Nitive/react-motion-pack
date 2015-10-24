@@ -7,24 +7,48 @@ export default class PopUp extends React.Component {
 
 	static propTypes = {
 		children: PropTypes.node.isRequired,
+
+		show: PropTypes.bool,
+
+		onClickOutside: PropTypes.func,
+
+		/** Custom class and style for element available */
 		className: PropTypes.string,
 		style: PropTypes.object,
-		motionConfig: PropTypes.array,
+
+		/** Use wrapper for styling background */
+		wrapperClassName: PropTypes.string,
+		wrapperStyle: PropTypes.object,
 	}
 
 	static defaultProps = {
-		style: {},
-		motionConfig: [120, 11],
+		show: true,
 	}
 
 
 	render() {
+		const {
+			show,
+			style,
+			className,
+			wrapperClassName,
+			wrapperStyle,
+			onClickOutside,
+		} = this.props
+
+		const enterConfig = [120, 11]
+		const leaveConfig = [300, 28]
+
 		const getContent = interpolated => (
-			<div style={wrapper}>
+			<div
+				style={{...wrapper, ...wrapperStyle, ...{pointerEvents: show ? '' : 'none'}}}
+				className={wrapperClassName}
+				onClick={onClickOutside}
+			>
 				<div
 					{...this.props}
-					className={this.props.className}
-					style={Object.assign({}, styles, this.props.style, {transform: `scale(${interpolated.scale})`})}
+					className={className}
+					style={{...styles, ...style, ...{transform: `scale(${interpolated.scale})`}}}
 				>
 					{this.props.children}
 				</div>
@@ -33,8 +57,8 @@ export default class PopUp extends React.Component {
 
 		return (
 			<Motion
-				defaultStyle={{scale: spring(0)}}
-				style={{scale: spring(1, this.props.motionConfig)}}
+				defaultStyle={{scale: spring(show ? 0 : 1)}}
+				style={{scale: spring(show ? 1 : 0, show ? enterConfig : leaveConfig)}}
 			>
 				{interpolated => getContent(interpolated)}
 			</Motion>

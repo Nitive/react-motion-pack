@@ -1,28 +1,21 @@
 import React, {PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
-import {wrapper, styles} from './styles'
+import {wrapper, content} from './styles'
 
 
 export default class PopUp extends React.Component {
 
 	static propTypes = {
 		children: PropTypes.node.isRequired,
-
 		show: PropTypes.bool,
-
-		onClickOutside: PropTypes.func,
-
-		/** Custom class and style for element available */
+		position: PropTypes.oneOf(['static', 'relative', 'absolute', 'fixed']),
 		className: PropTypes.string,
 		style: PropTypes.object,
-
-		/** Use wrapper for styling background */
-		wrapperClassName: PropTypes.string,
-		wrapperStyle: PropTypes.object,
 	}
 
 	static defaultProps = {
 		show: true,
+		position: 'fixed',
 	}
 
 
@@ -31,28 +24,22 @@ export default class PopUp extends React.Component {
 			show,
 			style,
 			className,
-			wrapperClassName,
-			wrapperStyle,
-			onClickOutside,
+			position,
 		} = this.props
 
 		const enterConfig = [120, 11]
 		const leaveConfig = [300, 28]
 
 		const getContent = interpolated => (
-			<div
-				style={{...wrapper, ...wrapperStyle, ...{pointerEvents: show ? '' : 'none'}}}
-				className={wrapperClassName}
-				onClick={onClickOutside}
-			>
-				<div
-					{...this.props}
-					className={className}
-					style={{...styles, ...style, ...{transform: `scale(${interpolated.scale})`}}}
-				>
-					{this.props.children}
+				<div style={{...wrapper, position}}>
+					<div
+						{...this.props}
+						className={className}
+						style={{...content, ...style, ...{transform: `scale(${interpolated.scale})`}}}
+					>
+						{this.props.children}
+					</div>
 				</div>
-			</div>
 		)
 
 		return (

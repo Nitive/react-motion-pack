@@ -1,4 +1,4 @@
-export const styles = {
+export const content = {
 	marginRight: 'auto',
 	marginLeft: 'auto',
 	backgroundColor: 'initial',
@@ -16,6 +16,7 @@ export const wrapper = {
 	bottom: 0,
 	zIndex: 99999,
 
-	height: '100vh',
+	height: '100%',
 	backgroundColor: 'transparent',
+	pointerEvents: 'none',
 }

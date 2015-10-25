@@ -1,3 +1,4 @@
-/styleguide/
+/build
+/index.html
 /styleguide.config.js
 /.eslintrc

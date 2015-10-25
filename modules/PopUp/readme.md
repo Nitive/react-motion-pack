@@ -37,6 +37,7 @@ important:before {
   border: 3px solid #564a46;
   border-radius: 7px;
   padding: 20px;
+  pointer-events: initial;
 }
 
 </style>
@@ -46,15 +47,12 @@ Change `show` property to see animation
 
 <important>
   You must specify show property to hide element with animation  
-  instead to disable rendering. Otherwise you will lose animation
+  instead to disable rendering. Otherwise you will lose animation.
 </important>
 
     <PopUp
       show={true} // change it to see animation (ProTip: add exclamation mark before true)
-      wrapperStyle={{
-        position: 'static', // to show PopUp inside container (position: fixed by default)
-        height: '',         // reset height (height: 100vh by default)
-      }}
+      position='static' // to show PopUp inside container (position: fixed by default)
     >
       <div className='content'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.

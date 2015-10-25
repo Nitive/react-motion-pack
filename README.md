@@ -7,3 +7,10 @@ Library of React animated components
 ### Main idea:
 * Rule behaivor not appearance
 * As easy as possible - just wrap your block into component to get animation
+
+### Dependences
+* [react](https://github.com/facebook/react)
+* [react-motion](https://github.com/chenglou/react-motion)
+
+### Installation
+`npm install --save react-motion-pack react react-motion`

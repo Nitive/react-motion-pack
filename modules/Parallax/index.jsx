@@ -1,18 +1,18 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 export default class Parallax extends React.Component {
 
 	static propTypes = {
-		children: React.PropTypes.node.isRequired,
-		min: React.PropTypes.number,
-		max: React.PropTypes.number,
-		speed: React.PropTypes.number,
+		children: PropTypes.node.isRequired,
+		scope: PropTypes.number,
+		speed: PropTypes.number,
+		offset: PropTypes.number,
 	}
 
 	static defaultProps = {
 		speed: 1,
-		min: 0,
-		max: 100,
+		scope: 100,
+		offset: 0,
 	}
 
 
@@ -33,8 +33,9 @@ export default class Parallax extends React.Component {
 	}
 
 	getPosition = () => {
-		const position = window.pageYOffset * this.props.speed
-		return -Math.min(this.props.max, Math.max(this.props.min, position))
+		const {scope, offset, speed} = this.props
+		const position = (window.pageYOffset * speed) - offset
+		return -Math.min(scope - offset, position)
 	}
 
 	scrollHandler = () => {

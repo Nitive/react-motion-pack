@@ -24,9 +24,14 @@
 	      default
 	    </div>
 	  </Parallax>
-	  <Parallax max={50}>
+	  <Parallax offset={20}>
 	    <div className='box'>
-	      max = 50
+	      offset = 20
+	    </div>
+	  </Parallax>
+	  <Parallax scope={50}>
+	    <div className='box'>
+	      scope = 50
 	    </div>
 	  </Parallax>
 	  <Parallax min={20}>

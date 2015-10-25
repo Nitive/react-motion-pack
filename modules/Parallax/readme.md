@@ -34,11 +34,6 @@
 	      scope = 50
 	    </div>
 	  </Parallax>
-	  <Parallax min={20}>
-	    <div className='box'>
-	      min = 20
-	    </div>
-	  </Parallax>
 	  <Parallax speed={2}>
 	    <div className='box'>
 	      speed = 2

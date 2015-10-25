@@ -4,4 +4,5 @@ module.exports = {
 	components: './**/*.jsx',
 	styleguideDir: '.',
 	serverPort: 3589,
+	template: './template.html',
 }

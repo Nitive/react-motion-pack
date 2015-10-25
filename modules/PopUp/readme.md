@@ -32,9 +32,9 @@ important:before {
 
 .content {
   width: 500px;
-  color: #564a46;
-  background-color: #fff5d7;
-  border: 3px solid #564a46;
+  color: #1f392b;
+  background-color: #d4efa5;
+  border: 3px solid #1f392b;
   border-radius: 7px;
   padding: 20px;
   pointer-events: initial;

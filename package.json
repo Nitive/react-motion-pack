@@ -10,7 +10,7 @@
     "test": "karma start",
     "styleguide-server": "styleguidist server",
     "styleguide-build": "styleguidist build",
-    "pages": "npm run styleguide-build; git checkout -b gh-pages; git add -f index.html build; git commit --allow-empty-message -m ''; git push origin gh-pages; git checkout master"
+    "pages": "git checkout gh-pages; git reset --hard master; npm run styleguide-build; git add -f index.html build; git commit --allow-empty-message -m ''; git push origin +gh-pages; git checkout master"
   },
   "repository": {
     "type": "git",

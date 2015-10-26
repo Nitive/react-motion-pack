@@ -5,12 +5,13 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "gulp",
+    "prepublish": "npm run build",
     "watch": "gulp watch",
     "lint": "eslint modules",
     "test": "karma start",
-    "styleguide-server": "styleguidist server",
-    "styleguide-build": "styleguidist build",
-    "pages": "git checkout gh-pages; git reset --hard master; npm run styleguide-build; git add -f index.html build; git commit --allow-empty-message -m ''; git push origin +gh-pages; git checkout master"
+    "server": "styleguidist server",
+    "static": "styleguidist build",
+    "pages": "git checkout gh-pages; git reset --hard master; npm run static; git add -f index.html build; git commit --allow-empty-message -m ''; git push origin +gh-pages; git checkout master"
   },
   "repository": {
     "type": "git",

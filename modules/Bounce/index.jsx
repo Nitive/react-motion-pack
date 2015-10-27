@@ -41,11 +41,11 @@ export default class Bounce extends React.Component {
 
 
 		const hideStyle = {
-			opacity: spring(0, config.opacity),
-			translateX: spring(x, config.translate),
-			translateY: spring(y, config.translate),
-			scaleX: spring(0.8, config.scale),
-			scaleY: spring(0.8, config.scale),
+			opacity: spring(0),
+			translateX: spring(x),
+			translateY: spring(y),
+			scaleX: spring(0.8),
+			scaleY: spring(0.8),
 		}
 
 		const showStyle = {

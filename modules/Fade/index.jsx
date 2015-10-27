@@ -11,17 +11,17 @@ export default class Fade extends React.Component {
 		]).isRequired,
 		type: PropTypes.oneOf(['in', 'out']),
 		side: PropTypes.oneOf(['left', 'right', 'up', 'down', 'none']),
-		sideOffset: PropTypes.number,
+		offset: PropTypes.number,
 	}
 
 	static defaultProps = {
 		type: 'in',
 		side: 'none',
-		sideOffset: 100,
+		offset: 0,
 	}
 
 	render() {
-		const { type, side, sideOffset } = this.props
+		const { type, side, offset } = this.props
 
 		const getContent = ({opacity, translateX, translateY}) => (
 			<div
@@ -34,11 +34,11 @@ export default class Fade extends React.Component {
 			</div>
 		)
 
-		let x = side === 'left' ? -sideOffset : 0
-		x = side === 'right' ? sideOffset : x
+		let x = side === 'left' ? -offset : 0
+		x = side === 'right' ? offset : x
 
-		let y = side === 'up' ? sideOffset : 0
-		y = side === 'down' ? -sideOffset : y
+		let y = side === 'up' ? offset : 0
+		y = side === 'down' ? -offset : y
 
 		const hideStyle = {
 			opacity: spring(0),

@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
-import {Motion, spring} from 'react-motion'
-import {wrapper, content} from './styles'
+import React, { PropTypes } from 'react'
+import { Motion, spring } from 'react-motion'
+import { wrapper, content } from './styles'
 
 
 export default class PopUp extends React.Component {

@@ -7,7 +7,6 @@
 .box {
 	display: inline-block;
 	padding: 7px;
-	margin-top: 100px;
 	margin-right: 50px;
 	height: 100px;
 	width: 100px;

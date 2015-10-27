@@ -8,7 +8,7 @@
 	display: inline-block;
 	padding: 7px;
 	margin-top: 100px;
-	margin-left: 20px;
+	margin-right: 50px;
 	height: 100px;
 	width: 100px;
 	background-color: #d4efa5;

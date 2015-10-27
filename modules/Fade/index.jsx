@@ -1,14 +1,10 @@
-import React, {PropTypes} from 'react'
-import {Motion, spring} from 'react-motion'
+import React, { PropTypes } from 'react'
+import { Motion, spring } from 'react-motion'
 
 export default class Fade extends React.Component {
 
 	static propTypes = {
-		children: PropTypes.oneOfType([
-			PropTypes.string,
-			PropTypes.element,
-			PropTypes.array,
-		]).isRequired,
+		children: PropTypes.node.isRequired,
 		type: PropTypes.oneOf(['in', 'out']),
 		side: PropTypes.oneOf(['left', 'right', 'up', 'down', 'none']),
 		offset: PropTypes.number,
@@ -21,18 +17,15 @@ export default class Fade extends React.Component {
 	}
 
 	render() {
-		const { type, side, offset } = this.props
+		const { type, side, offset, children } = this.props
 
-		const getContent = ({opacity, translateX, translateY}) => (
-			<div
-				style={{
-					opacity,
-					transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
-				}}
-			>
-				{this.props.children}
-			</div>
-		)
+		const getContent = ({ opacity, translateX, translateY }) => {
+			const style = {
+				opacity,
+				transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
+			}
+			return React.cloneElement(children, { style })
+		}
 
 		let x = side === 'left' ? -offset : 0
 		x = side === 'right' ? offset : x
@@ -54,10 +47,10 @@ export default class Fade extends React.Component {
 
 		return (
 			<Motion
-				defaultStyle={type !== 'out' ? hideStyle : showStyle}
-				style={type !== 'out' ? showStyle : hideStyle}
+				defaultStyle={ type !== 'out' ? hideStyle : showStyle }
+				style={ type !== 'out' ? showStyle : hideStyle }
 			>
-				{interpolated => getContent(interpolated)}
+				{ interpolated => getContent(interpolated) }
 			</Motion>
 		)
 	}

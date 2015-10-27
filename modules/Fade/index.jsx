@@ -37,8 +37,8 @@ export default class Fade extends React.Component {
 		let x = side === 'left' ? -sideOffset : 0
 		x = side === 'right' ? sideOffset : x
 
-		let y = side === 'up' ? -sideOffset : 0
-		y = side === 'down' ? sideOffset : y
+		let y = side === 'up' ? sideOffset : 0
+		y = side === 'down' ? -sideOffset : y
 
 		const hideStyle = {
 			opacity: spring(0),

@@ -2,6 +2,7 @@
 
 .wrapper {
 	display: inline-block;
+	height: 500px;
 }
 
 .box {
@@ -23,12 +24,12 @@
 	      default
 	    </div>
 	  </Parallax>
-	  <Parallax offset={20}>
+	  <Parallax offset={200}>
 	    <div className='box'>
-	      offset = 20
+	      offset = 200
 	    </div>
 	  </Parallax>
-	  <Parallax scope={50}>
+	  <Parallax scope={500}>
 	    <div className='box'>
 	      scope = 50
 	    </div>

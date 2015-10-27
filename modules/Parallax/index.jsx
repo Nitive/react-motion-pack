@@ -24,6 +24,9 @@ export default class Parallax extends React.Component {
 
 
 	componentDidMount() {
+		const ref = this.refs.node
+		const node = React.version.slice(0, 4) === '0.13' ? ref.getDOMNode() : ref
+		this.startOffset = node.offsetTop
 		window.addEventListener('scroll', this.scrollHandler)
 	}
 
@@ -33,9 +36,9 @@ export default class Parallax extends React.Component {
 	}
 
 	getPosition = () => {
-		const {scope, offset, speed} = this.props
-		const position = (window.pageYOffset * speed) - offset
-		return -Math.min(scope - offset, position)
+		const { scope, offset, speed } = this.props
+		const position = ((window.pageYOffset - this.startOffset) * speed)
+		return Math.min(-Math.min(scope - offset, position), scope + offset)
 	}
 
 	scrollHandler = () => {
@@ -50,6 +53,6 @@ export default class Parallax extends React.Component {
 			transform: `translateY(${this.state.position}px)`,
 		}
 
-		return React.cloneElement(this.props.children, {style})
+		return React.cloneElement(this.props.children, { style, ref: 'node' })
 	}
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-motion-pack",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Library of react components with beautiful animation",
   "main": "lib/index.js",
   "scripts": {

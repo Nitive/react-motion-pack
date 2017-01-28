@@ -1,4 +1,6 @@
 # react-motion-pack
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Nitive/react-motion-pack.svg)](https://greenkeeper.io/)
 **• work in progress •**
 
 Library of React animated components  
